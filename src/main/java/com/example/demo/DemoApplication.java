@@ -28,22 +28,38 @@ CommandLineRunner runner(
 	return args -> {
 		Address address = new Address(
 				"Poland",
-				"Rawa Mazowiecka",
-				"96-200"
+				"Warszawa",
+				"02-815"
 		);
-		String email = "Filip@kkowalczykadrian.pl";
+		String email = "adres@ScieburaJoanna.pl";
 
 		Student student = new Student(
-				"Filip",
-				"Kowalczyk",
+				"Joanna",
+				"Sciebura",
 				email,
 				Gender.FEMALE,
 				address,
-				List.of("PL/SQL od podstaw"),
+				List.of("Linux wiki"),
 				BigDecimal.TEN,
 				LocalDateTime.now()
 		);
 
+		// usingMongoTemplateAndQuery(repository, mongoTemplate, email, student);
+
+		repository.findStudentByEmail(email)
+				.ifPresentOrElse(s -> {
+					System.out.println(s + " already exists");
+				}, ()->{
+					System.out.println("Inserting student " + student);
+					repository.insert(student);
+				});
+	};
+
+
+
+	}
+
+	private void usingMongoTemplateAndQuery(StudentRepository repository, MongoTemplate mongoTemplate, String email, Student student) {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("email").is(email));
 
@@ -57,15 +73,8 @@ CommandLineRunner runner(
 		if(students.isEmpty()){
 			System.out.println("Inserting student " + student);
 			repository.insert(student);
-			repository.findAll();
-			System.out.println("Gituwa");
 		} else {
 			System.out.println(student + " already exists");
 		}
-
-		};
-
-
-
 	}
 }
