@@ -8,7 +8,7 @@ Zapewnienie stabilnej infrastruktury bazy NoSQL oraz dokonanie testów, m.in awa
 
 # BookRentalData
 
-#Emil, Kowalczyk, 230178
+### Emil, Kowalczyk, 230178
 
 ## Etap: 2
 
