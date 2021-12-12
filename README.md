@@ -1,4 +1,4 @@
-# StudentsMongoDB
+# StudentsMongoDB - MongoDBReplicaSet
 Docker + Spring Boot + MongoDB 
 ----------------------------------------
 Sprawozdanie laboratoryjne
