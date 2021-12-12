@@ -2,14 +2,13 @@
 Docker + Spring Boot + MongoDB 
 ----------------------------------------
 Sprawozdanie laboratoryjne
-Nierelacyjne bazy danych
+Nierelacyjne bazy danych    - Zapewnienie stabilnej infrastruktury bazy NoSQL oraz dokonanie testów, m.in awaryjności całej infrastruktury.
 
 # BookRentalData
 
 Grupa:
 
 1. Emil, Kowalczyk, 230178
-2. Joanna Ściebura, 211843
 
 ## Etap: 2
 
